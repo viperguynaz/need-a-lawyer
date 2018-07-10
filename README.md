@@ -1,6 +1,6 @@
 # NeedALawyer
 
-![Build](https://falconwebtech.visualstudio.com/5aba4bd0-61c2-4d3d-936e-3a1ee7bc2fdd/_apis/build/status/10)
+![Build](https://falconwebtech.visualstudio.com/_apis/public/build/definitions/5aba4bd0-61c2-4d3d-936e-3a1ee7bc2fdd/10/badge?api-version=5.0-preview.2)
 
 ![Release](https://falconwebtech.vsrm.visualstudio.com/_apis/public/Release/badge/5aba4bd0-61c2-4d3d-936e-3a1ee7bc2fdd/1/1)
 
