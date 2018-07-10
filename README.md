@@ -1,5 +1,9 @@
 # NeedALawyer
 
+![Build](https://falconwebtech.visualstudio.com/5aba4bd0-61c2-4d3d-936e-3a1ee7bc2fdd/_apis/build/status/10)
+
+![Release](https://falconwebtech.vsrm.visualstudio.com/_apis/public/Release/badge/5aba4bd0-61c2-4d3d-936e-3a1ee7bc2fdd/1/1)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ## Development server
