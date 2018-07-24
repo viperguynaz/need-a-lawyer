@@ -1,0 +1,4 @@
+<select name="specialty" (onChange)="specialtyChangeEvent()">
+  <option value="" selected>-- ALL --</option>
+  <option *ngFor="let item of options" [value]="item">{{item}}</option>
+</select>
