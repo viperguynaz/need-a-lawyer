@@ -11,6 +11,7 @@ import { TermsComponent } from './containers/terms/terms.component';
 import { NotFoundComponent } from './containers/not-found/not-found.component';
 import { AboutComponent } from './containers/about/about.component';
 import { SearchComponent } from './containers/search/search.component';
+import { GooglePlacesDirective } from './directives/google-places.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SearchComponent } from './containers/search/search.component';
     TermsComponent,
     NotFoundComponent,
     AboutComponent,
-    SearchComponent
+    SearchComponent,
+    GooglePlacesDirective
   ],
   imports: [
     AppRoutingModule,
