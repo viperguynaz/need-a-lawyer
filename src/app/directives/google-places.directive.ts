@@ -1,8 +1,10 @@
+///<reference path="../../../node_modules/@types/googlemaps/index.d.ts" />
+
 import { AfterViewInit, Directive, ElementRef, EventEmitter, Input, NgZone, Output } from "@angular/core";
 import { Address } from "../models/address";
 import { Options } from "../models/options/options";
 
-declare let google: any;
+//declare let google: any;
 @Directive({
   selector: '[appGooglePlaces]',
   exportAs: 'app-places'
@@ -10,8 +12,8 @@ declare let google: any;
 export class GooglePlacesDirective implements AfterViewInit {
   @Input('options') options: Options;
   @Output() onAddressChange: EventEmitter<Address> = new EventEmitter();
-  private autocomplete: any;
-  private eventListener: any;
+  private autocomplete: google.maps.places.Autocomplete;
+  private eventListener: google.maps.MapsEventListener;
   public place: Address;
 
   constructor(private el: ElementRef, private ngZone: NgZone) {
