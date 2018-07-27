@@ -4,7 +4,7 @@ import { AfterViewInit, Directive, ElementRef, EventEmitter, Input, NgZone, Outp
 import { Address } from "../models/address";
 import { Options } from "../models/options/options";
 
-//declare let google: any;
+declare let google: any;
 @Directive({
   selector: '[appGooglePlaces]',
   exportAs: 'app-places'

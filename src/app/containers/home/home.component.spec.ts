@@ -4,11 +4,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomeComponent } from './home.component';
 import { GooglePlacesDirective } from '../../directives/google-places.directive';
 import { SpecialtySelectComponent } from '../../components/specialty-select/specialty-select.component';
-//import { addListener } from 'cluster';
+import { addListener } from 'cluster';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
+  // window['google'] = {
+  //   maps: {
+  //     Maps: () => { },
+  //     places: { 
+  //       Autocomplete: class {
+  //         addListener: () => { }
+  //       }
+  //     }
+  //   }
+  // };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
