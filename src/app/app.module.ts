@@ -12,7 +12,6 @@ import { NotFoundComponent } from './containers/not-found/not-found.component';
 import { AboutComponent } from './containers/about/about.component';
 import { SearchComponent } from './containers/search/search.component';
 import { GooglePlacesDirective } from './directives/google-places.directive';
-import { SpecialityDirective } from './directives/speciality.directive';
 import { SpecialtySelectComponent } from './components/specialty-select/specialty-select.component';
 
 @NgModule({
@@ -27,7 +26,6 @@ import { SpecialtySelectComponent } from './components/specialty-select/specialt
     AboutComponent,
     SearchComponent,
     GooglePlacesDirective,
-    SpecialityDirective,
     SpecialtySelectComponent
   ],
   imports: [
