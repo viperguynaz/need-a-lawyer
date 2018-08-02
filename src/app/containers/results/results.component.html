@@ -3,7 +3,11 @@
 <p>{{ description }}</p>
 <p>Results:</p>
 <ul>
-  <li>AAA</li>
-  <li>BBB</li>
-  <li>CCC</li>
+  <li *ngFor="let result of results">{{ result.name }}>
+    <ul>
+      <li>{{ result.vicinity }}</li>
+      <li>rating: {{ result.rating }}</li>
+    </ul>
+  </li>
+
 </ul>

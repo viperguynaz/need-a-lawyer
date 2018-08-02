@@ -34,4 +34,16 @@ describe('ResultsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should retrieve city parameter', () => {
+    expect(component.city).toEqual('phoenix');
+  });
+
+  it('should retrieve state parameter', () => {
+    expect(component.state).toEqual('arizona');
+  });
+
+  it('should retrieve speciality parameter', () => {
+    expect(component.speciality).toEqual('bankruptcy');
+  });
 });
