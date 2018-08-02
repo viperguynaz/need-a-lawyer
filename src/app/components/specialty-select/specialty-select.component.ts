@@ -8,15 +8,40 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class SpecialtySelectComponent implements OnInit {
 
   @Output() onSpecialtyChange: EventEmitter<string> = new EventEmitter();
-  public options: Array<string> = ["AAA", "BBB", "CCC" ];
+  public options: Array<string> = [
+    "Bankruptcy", 
+    "Business", 
+    "Corporate", 
+    "Civil Rights", 
+    "Criminal Defense", 
+    "Divorce", 
+    "DUI", 
+    "DWI", 
+    "Employment", 
+    "Environmental", 
+    "Estate Law", 
+    "Estate Planning", 
+    "Family", 
+    "Government", 
+    "Immigration", 
+    "Military", 
+    "Paralegals", 
+    "Personal Injury", 
+    "Private Practice", 
+    "Property", 
+    "Public Interest", 
+    "Real Estate", 
+    "Toxic Tort", 
+    "Trial"
+  ];
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  specialtyChangeEvent() {
-    console.log("testing");
+  specialtyChangeEvent(event: any) {
+    console.log(event.target.value);
   }
 
 }

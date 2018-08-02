@@ -19,10 +19,6 @@ const _routes: Routes = [
       component: SearchComponent,
     },
     {
-      path: 'results',
-      component: ResultsComponent,
-    },
-    {
       path: 'detail',
       component: DetailComponent,
     },
@@ -42,6 +38,10 @@ const _routes: Routes = [
       path: 'about',
       component: AboutComponent,
     },
+    {
+      path: ':city/:state/:speciality/lawyers',
+      component: ResultsComponent,
+    },    
   ];
 
   export const APP_ROUTES = _routes;

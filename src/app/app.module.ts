@@ -13,6 +13,8 @@ import { AboutComponent } from './containers/about/about.component';
 import { SearchComponent } from './containers/search/search.component';
 import { GooglePlacesDirective } from './directives/google-places.directive';
 import { SpecialtySelectComponent } from './components/specialty-select/specialty-select.component';
+import { ToSlugPipe } from './pipes/to-slug.pipe';
+import { FromSlugPipe } from './pipes/from-slug.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { SpecialtySelectComponent } from './components/specialty-select/specialt
     AboutComponent,
     SearchComponent,
     GooglePlacesDirective,
-    SpecialtySelectComponent
+    SpecialtySelectComponent,
+    ToSlugPipe,
+    FromSlugPipe
   ],
   imports: [
     AppRoutingModule,

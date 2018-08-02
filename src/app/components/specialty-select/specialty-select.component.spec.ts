@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ToSlugPipe } from '../../pipes/to-slug.pipe';
 import { SpecialtySelectComponent } from './specialty-select.component';
 
 describe('SpecialtySelectComponent', () => {
@@ -8,7 +8,7 @@ describe('SpecialtySelectComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SpecialtySelectComponent ]
+      declarations: [ SpecialtySelectComponent, ToSlugPipe ]
     })
     .compileComponents();
   }));
