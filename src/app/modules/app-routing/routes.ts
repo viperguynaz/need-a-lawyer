@@ -6,6 +6,7 @@ import { DetailComponent } from '../../containers/detail/detail.component';
 import { PrivacyComponent } from '../../containers/privacy/privacy.component';
 import { TermsComponent } from '../../containers/terms/terms.component';
 import { NotFoundComponent } from '../../containers/not-found/not-found.component';
+import { ErrorComponent } from '../../containers/error/error.component';
 import { AboutComponent } from '../../containers/about/about.component';
 import { SpecialtyComponent } from '../../containers/specialty/specialty.component';
 
@@ -29,6 +30,10 @@ const _routes: Routes = [
     {
       path: 'terms',
       component: TermsComponent,
+    },
+    {
+      path: 'error',
+      component: ErrorComponent,
     },
     {
       path: '404',
