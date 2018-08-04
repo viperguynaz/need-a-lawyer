@@ -7,7 +7,7 @@ import { PrivacyComponent } from '../../containers/privacy/privacy.component';
 import { TermsComponent } from '../../containers/terms/terms.component';
 import { NotFoundComponent } from '../../containers/not-found/not-found.component';
 import { AboutComponent } from '../../containers/about/about.component';
-import { SearchComponent } from '../../containers/search/search.component';
+import { SpecialtyComponent } from '../../containers/specialty/specialty.component';
 
 const _routes: Routes = [
     {
@@ -15,8 +15,8 @@ const _routes: Routes = [
       component: HomeComponent,
     },
     {
-      path: 'search',
-      component: SearchComponent,
+      path: 'specialty',
+      component: SpecialtyComponent,
     },
     {
       path: 'detail',
