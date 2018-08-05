@@ -20,10 +20,6 @@ const _routes: Routes = [
       component: SpecialtyComponent,
     },
     {
-      path: 'detail',
-      component: DetailComponent,
-    },
-    {
       path: 'privacy',
       component: PrivacyComponent,
     },
@@ -47,6 +43,10 @@ const _routes: Routes = [
       path: ':city/:state/:speciality/lawyers',
       component: ResultsComponent,
     },    
-  ];
+    {
+      path: ':city/:state/:speciality/attorney/:id',
+      component: DetailComponent,
+    },
+];
 
   export const APP_ROUTES = _routes;

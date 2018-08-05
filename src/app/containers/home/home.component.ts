@@ -24,4 +24,8 @@ export class HomeComponent implements OnInit {
     console.log(address.geometry.viewport.getNorthEast());
   }
 
+  public handleSpecialtyChange(speacilty: String) {
+    console.log("specialty: " + speacilty);
+  }
+
 }

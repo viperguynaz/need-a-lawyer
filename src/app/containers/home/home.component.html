@@ -7,6 +7,6 @@
   <img src="https://regmedia.co.uk/2016/06/02/lawyer_up.jpg?x=1200&y=794" width="80%" alt="find a lawyer" class="homeimg" />
   <p>Coming soon!</p>
   <input appGooglePlaces [options]='placesRef.options' #placesRef (onAddressChange)="handleAddressChange($event)"/><br/><br/>
-  <app-specialty-select></app-specialty-select>
+  <app-specialty-select (onSpecialtyChange)="handleSpecialtyChange($event)"></app-specialty-select>
   <app-specialties></app-specialties>
 </div>
