@@ -4,6 +4,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { APP_CONSTANTS } from '../../utils/constants';
 import { NearbySearchService } from '../../services/nearby-search.service';
+import { IPlaceResponse } from '../../interfaces/iPlaceResponse'
 
 @Component({
   selector: 'app-detail',
@@ -41,7 +42,7 @@ export class DetailComponent implements OnDestroy, OnInit {
   }
 
   getDetail(placeId: string): void {
-    this.search.getDetail(placeId).subscribe(result => this.result = result);
+    this.search.getDetail(placeId).subscribe(result => this.result = result.Place);
   }
 
 }

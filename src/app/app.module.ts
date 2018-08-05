@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, PLATFORM_ID, APP_ID, Inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './modules/app-routing/app-routing.module';
 import { AppComponent } from './app.component';
@@ -46,6 +47,7 @@ import { SpecialtyComponent } from './containers/specialty/specialty.component';
   imports: [
     AppRoutingModule,
     BrowserModule.withServerTransition({ appId: 'need-a-lawyer' }),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

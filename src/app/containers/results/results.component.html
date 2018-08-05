@@ -3,7 +3,7 @@
 <p>{{ description }}</p>
 <p>Results:</p>
 <ul>
-  <li *ngFor="let result of results">{{ result.name }}
+  <li *ngFor="let result of results"><a routerLink="/{{city}}/{{state}}/{{speciality}}/attorney/{{result.place_id}}">{{ result.name }}</a>
     <ul>
       <li>{{ result.vicinity }}</li>
       <li>rating: {{ result.rating }}</li>
