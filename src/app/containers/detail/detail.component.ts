@@ -2,7 +2,7 @@
 
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import { APP_CONSTANTS } from '../../utils/constants';
 import { NearbySearchService } from '../../services/nearby-search.service';
 
 @Component({
@@ -15,6 +15,8 @@ export class DetailComponent implements OnDestroy, OnInit {
   state: string;
   speciality: string; 
   id: string;
+  apiKey: string;
+  maxWidth: number;
 
   result: google.maps.places.PlaceResult;
   private sub: any;
@@ -27,8 +29,10 @@ export class DetailComponent implements OnDestroy, OnInit {
       this.state = params['state'];
       this.speciality = params['speciality'];
       this.id = params['id'];
+      this.apiKey = APP_CONSTANTS.MapsApiKey;
     });
 
+    this.maxWidth = 400;
     this.getDetail(this.id);
   }
 
