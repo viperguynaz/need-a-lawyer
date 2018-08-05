@@ -42,6 +42,7 @@ export class SpecialtySelectComponent implements OnInit {
 
   specialtyChangeEvent(event: any) {
     console.log(event.target.value);
+    this.onSpecialtyChange.emit(event.target.value);
   }
 
 }
