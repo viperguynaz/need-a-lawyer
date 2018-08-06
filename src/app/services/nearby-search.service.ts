@@ -2,12 +2,10 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable, of, bindCallback } from 'rxjs';
 
 import { Results } from '../mock/mock-nearby-results';
-import { catchError, map, tap } from 'rxjs/operators';
 import { APP_CONSTANTS } from '../utils/constants';
-import { IPlaceResponse } from '../interfaces/iPlaceResponse'
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +13,8 @@ import { IPlaceResponse } from '../interfaces/iPlaceResponse'
 export class NearbySearchService {
 
   apiKey: string;
-  
+  private placeService: google.maps.places.PlacesService;
+
   constructor(private http: HttpClient) { 
     this.apiKey = APP_CONSTANTS.MapsApiKey;
   }
@@ -24,14 +23,40 @@ export class NearbySearchService {
     return of(Results);
   }
 
-  getDetail(placeId: string): Observable<IPlaceResponse> {
-    //const url = "https://google.com";
-    const url = `https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&fields=address_component,adr_address,alt_id,formatted_address,geometry,icon,id,name,permanently_closed,photo,place_id,scope,type,url,utc_offset,vicinity&key=${this.apiKey}`;
-    console.log(url);
+  getDetail(placeId: string, searchService: google.maps.places.PlacesService): Observable<any> {
+      var request = {
+      placeId: placeId,
+      fields: [
+        'address_component',
+        'adr_address',
+        'alt_id',
+        'formatted_address',
+        'geometry',
+        'icon',
+        'id',
+        'name',
+        'permanently_closed',
+        'photo',
+        'place_id',
+        'scope',
+        'type',
+        'url',
+        'utc_offset',
+        'vicinity'
+      ]
+    };
 
-    return this.http.get<IPlaceResponse>(url).pipe(
-      tap(_ => console.log(`fetched detail id=${placeId}`)),
-      catchError(this.handleError<IPlaceResponse>(`getDetail id=${placeId}`)));
+    const callback = (place, status) => {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        if (place) {
+          return place;
+        }
+      }
+    };
+
+    let $getDetailsAsObservable : any;
+    $getDetailsAsObservable = bindCallback(searchService.getDetails.bind(searchService), callback);
+    return $getDetailsAsObservable(request);   
   }
 
   /**

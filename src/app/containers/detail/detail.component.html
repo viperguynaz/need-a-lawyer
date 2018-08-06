@@ -1,14 +1,17 @@
-<h1>{{ speciality | titlecase }} Attorney in {{ city | titlecase }}, {{ state | titlecase }}</h1>
-<h2>{{ result.name }}</h2>
-<p><a href="{{result.url}}">{{ result.formatted_address }}</a></p>
-<p [innerHTML]="result.formatted_phone_number"></p>
-<p *ngIf="result.rating">rating: {{ result.rating }}</p>
-
-<ul *ngIf="result.photos.length > 0">
-  <li *ngFor="let photo of result.photos">
-    <img src="https://maps.googleapis.com/maps/api/place/photo?key={{apiKey}}&maxwidth={{maxWidth}}&photoreference={{photo.photo_reference}}" alt="" />
-    <div *ngIf="photo.html_attributions.length > 0">
+<div *ngIf="result">
+  <h1>{{ speciality | titlecase }} Attorney in {{ city | titlecase }}, {{ state | titlecase }}</h1>
+  <h2>{{ result.name }}</h2>
+  <p>
+    <a href="{{result.url}}">{{ result.formatted_address }}</a>
+  </p>
+  <p [innerHTML]="result.formatted_phone_number"></p>
+  <ul>
+    <li *ngFor="let photo of result.photos">
+      <img src="https://maps.googleapis.com/maps/api/place/photo?key={{apiKey}}&photoreference={{photo.getUrl()}}&maxwidth=400" alt="" />
+      <div *ngIf="photo.html_attributions.length > 0">
         <p *ngFor="let attribution of photo.html_attributions" [innerHTML]="attribution"></p>
-    </div>
-  </li>
-</ul>
+      </div>
+    </li>
+  </ul>
+</div>
+<div id="map" #gmap style="width:100%;height:400px"></div>
