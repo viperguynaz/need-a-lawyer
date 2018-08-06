@@ -17,7 +17,7 @@ export class DetailComponent implements OnDestroy, OnInit {
   speciality: string; 
   id: string;
   apiKey: string;
-  //maxWidth: number = 400;
+  maxWidth: number;
 
   result: google.maps.places.PlaceResult;
   private sub: any;
@@ -44,7 +44,7 @@ export class DetailComponent implements OnDestroy, OnInit {
       this.searchService = new google.maps.places.PlacesService(this.map);
     });
 
-    //this.maxWidth = 400;
+    this.maxWidth = 400;
     this.getDetail(this.id);    
   }
 

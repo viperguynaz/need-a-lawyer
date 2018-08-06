@@ -7,7 +7,7 @@
   <p [innerHTML]="result.formatted_phone_number"></p>
   <ul>
     <li *ngFor="let photo of result.photos">
-      <img src="https://maps.googleapis.com/maps/api/place/photo?key={{apiKey}}&photoreference={{photo.getUrl()}}&maxwidth=400" alt="" />
+      <img src="{{photo.getUrl({'maxWidth': 400})}}" alt="" />
       <div *ngIf="photo.html_attributions.length > 0">
         <p *ngFor="let attribution of photo.html_attributions" [innerHTML]="attribution"></p>
       </div>
