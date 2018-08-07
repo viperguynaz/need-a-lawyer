@@ -1,10 +1,10 @@
 <h1>{{ speciality | fromSlug | titlecase }} Lawyers</h1>
 <h2>{{ city | titlecase }}, {{ state | titlecase }}</h2>
 <p>{{ description }}</p>
-<div *ngIf="results$ | async as places; else loading">
+<div *ngIf="response$ | async as place; else loading">
   <p>Results:</p>
   <ul>
-    <li *ngFor="let place of places">
+    <li *ngFor="let place of place.results">
       <a routerLink="/{{city}}/{{state}}/{{speciality}}/attorney/{{place.place_id}}">{{ place.name }}</a>
       <ul>
         <li>{{ place.vicinity }}</li>

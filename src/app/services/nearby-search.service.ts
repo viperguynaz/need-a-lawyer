@@ -6,6 +6,7 @@ import { Observable, of, bindCallback, from } from 'rxjs';
 
 import { Results } from '../mock/mock-nearby-results';
 import { APP_CONSTANTS } from '../utils/constants';
+import { IPlacesDetailResponse } from '../interfaces/iPlacesDetailResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -20,10 +21,10 @@ export class NearbySearchService {
   getResults(request: google.maps.places.PlaceSearchRequest, searchService: google.maps.places.PlacesService): Observable<any> {
     const promise = new Promise(function(resolve, reject) {
       // use nearbySearch method to retrieve Place data 
-      searchService.nearbySearch(request, function(results, status) {
+      searchService.nearbySearch(request, function(results, status, pagination) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           // upon successful request resolve place
-          resolve(results);
+          resolve({results, status, pagination});
         } else {
           // else reject with status
           reject(status);
@@ -64,7 +65,7 @@ export class NearbySearchService {
       searchService.getDetails(request, function(result, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           // upon successful request resolve place
-          resolve(result);
+          resolve({result, status});
         } else {
           // else reject with status
           reject(status);

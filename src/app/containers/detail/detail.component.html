@@ -1,12 +1,12 @@
-<div *ngIf="result$ | async as place; else loading">
+<div *ngIf="response$ | async as place; else loading">
   <h1>{{ speciality | titlecase }} Attorney in {{ city | titlecase }}, {{ state | titlecase }}</h1>
-  <h2>{{ place.name }}</h2>
+  <h2>{{ place.result.name }}</h2>
   <p>
-    <a href="{{place.url}}">{{ place.formatted_address }}</a>
+    <a href="{{place.result.url}}">{{ place.result.formatted_address }}</a>
   </p>
-  <p [innerHTML]="place.formatted_phone_number"></p>
+  <p [innerHTML]="place.result.formatted_phone_number"></p>
   <ul>
-    <li *ngFor="let photo of place.photos">
+    <li *ngFor="let photo of place.result.photos">
       <img src="{{photo.getUrl({'maxWidth': 400})}}" alt="" />
       <div *ngIf="photo.html_attributions.length > 0">
         <p *ngFor="let attribution of photo.html_attributions" [innerHTML]="attribution"></p>

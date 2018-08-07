@@ -4,7 +4,7 @@ import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/co
 import { ActivatedRoute } from '@angular/router';
 import { APP_CONSTANTS } from '../../utils/constants';
 import { NearbySearchService } from '../../services/nearby-search.service';
-import { IPlaceResponse } from '../../interfaces/iPlaceResponse';
+import { IPlacesDetailResponse } from '../../interfaces/iPlacesDetailResponse';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -19,7 +19,7 @@ export class DetailComponent implements OnDestroy, OnInit {
   id: string;
   maxWidth: number;
 
-  result$: Observable<google.maps.places.PlaceResult>;
+  response$: Observable<IPlacesDetailResponse>;
   routeParams$: Observable<{ [key: string]: any; }>;
   private routeParams: any;
   private map: google.maps.Map;
@@ -54,7 +54,7 @@ export class DetailComponent implements OnDestroy, OnInit {
   }
 
   getDetail(placeId: string): void {
-    this.result$ = this.search.getDetail(placeId, this.searchService);
+    this.response$ = this.search.getDetail(placeId, this.searchService);
   }
 
 }

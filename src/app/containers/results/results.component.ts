@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { NearbySearchService } from '../../services/nearby-search.service';
 import { Observable } from 'rxjs';
+import { IPlacesSearchResponse } from '../../interfaces/iPlacesSearchResponse';
 
 @Component({
   selector: 'app-results',
@@ -16,7 +17,7 @@ export class ResultsComponent implements OnInit, OnDestroy {
   state: string;
   speciality: string; 
   description: string;
-  results$: Observable<google.maps.places.PlaceResult[]>;
+  response$: Observable<IPlacesSearchResponse>;
   private routeParams: any;
   private map: google.maps.Map;
   private searchService: google.maps.places.PlacesService;
@@ -55,6 +56,6 @@ export class ResultsComponent implements OnInit, OnDestroy {
       type: 'lawyer'
     };
 
-    this.results$ = this.search.getResults(request, this.searchService);
+    this.response$ = this.search.getResults(request, this.searchService);
   }
 }
