@@ -17,12 +17,11 @@ export class DetailComponent implements OnDestroy, OnInit {
   state: string;
   speciality: string;
   id: string;
-  apiKey: string;
   maxWidth: number;
 
   result$: Observable<google.maps.places.PlaceResult>;
   routeParams$: Observable<{ [key: string]: any; }>;
-  private sub: any;
+  private routeParams: any;
   private map: google.maps.Map;
   private searchService: google.maps.places.PlacesService;
 
@@ -31,16 +30,15 @@ export class DetailComponent implements OnDestroy, OnInit {
   constructor(private el: ElementRef, private route: ActivatedRoute, private search: NearbySearchService) { }
 
   ngOnInit() {
-    this.apiKey = APP_CONSTANTS.MapsApiKey;
     const mapProp = {
-      center: new google.maps.LatLng(18.5793, 73.8143),
+      center: new google.maps.LatLng(33.507441,-112.0109636),
       zoom: 15,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
     this.searchService = new google.maps.places.PlacesService(this.map);
 
-    this.sub = this.route.params.subscribe(params => {
+    this.routeParams = this.route.params.subscribe(params => {
       this.city = params['city'];
       this.state = params['state'];
       this.speciality = params['speciality'];
@@ -52,7 +50,7 @@ export class DetailComponent implements OnDestroy, OnInit {
   }
 
   ngOnDestroy() {
-    this.sub.unsubscribe();
+    this.routeParams.unsubscribe();
   }
 
   getDetail(placeId: string): void {

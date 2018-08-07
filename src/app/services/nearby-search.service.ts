@@ -13,18 +13,29 @@ import { APP_CONSTANTS } from '../utils/constants';
 export class NearbySearchService {
 
   apiKey: string;
-  private placeService: google.maps.places.PlacesService;
-
-  constructor(private http: HttpClient) {
+    constructor(private http: HttpClient) {
     this.apiKey = APP_CONSTANTS.MapsApiKey;
   }
 
-  getResults(): Observable<google.maps.places.PlaceResult[]> {
-    return of(Results);
+  getResults(request: google.maps.places.PlaceSearchRequest, searchService: google.maps.places.PlacesService): Observable<any> {
+    const promise = new Promise(function(resolve, reject) {
+      // use nearbySearch method to retrieve Place data 
+      searchService.nearbySearch(request, function(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          // upon successful request resolve place
+          resolve(results);
+        } else {
+          // else reject with status
+          reject(status);
+        }
+      });
+    });
+
+    return from(promise);
   }
 
   getDetail(placeId: string, searchService: google.maps.places.PlacesService): Observable<any> {
-      const request = {
+      const request: google.maps.places.PlaceDetailsRequest = {
         placeId: placeId,
         fields: [
           'address_component',
@@ -50,10 +61,10 @@ export class NearbySearchService {
 
     const promise = new Promise(function(resolve, reject) {
       // use getDetails method to retrieve Place data via the Place's place_id property
-      searchService.getDetails(request, function(place, status) {
+      searchService.getDetails(request, function(result, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           // upon successful request resolve place
-          resolve(place);
+          resolve(result);
         } else {
           // else reject with status
           reject(status);

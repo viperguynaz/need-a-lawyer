@@ -1,12 +1,19 @@
 <h1>{{ speciality | fromSlug | titlecase }} Lawyers</h1>
 <h2>{{ city | titlecase }}, {{ state | titlecase }}</h2>
 <p>{{ description }}</p>
-<p>Results:</p>
-<ul>
-  <li *ngFor="let result of results"><a routerLink="/{{city}}/{{state}}/{{speciality}}/attorney/{{result.place_id}}">{{ result.name }}</a>
-    <ul>
-      <li>{{ result.vicinity }}</li>
-      <li>rating: {{ result.rating }}</li>
-    </ul>
-  </li>
-</ul>
+<div *ngIf="results$ | async as places; else loading">
+  <p>Results:</p>
+  <ul>
+    <li *ngFor="let place of places">
+      <a routerLink="/{{city}}/{{state}}/{{speciality}}/attorney/{{place.place_id}}">{{ place.name }}</a>
+      <ul>
+        <li>{{ place.vicinity }}</li>
+        <li>rating: {{ place.rating }}</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<ng-template #loading>
+  <div>loading...</div>
+</ng-template>
+<div id="map" #gmap style="width:100%;height:400px"></div>
