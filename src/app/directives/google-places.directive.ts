@@ -14,7 +14,7 @@ export class GooglePlacesDirective implements AfterViewInit {
   @Output() onAddressChange: EventEmitter<Address> = new EventEmitter();
   private autocomplete: google.maps.places.Autocomplete;
   private eventListener: google.maps.MapsEventListener;
-  public place: Address;
+  public place: google.maps.places.PlaceResult;
 
   constructor(private el: ElementRef, private ngZone: NgZone) {
   }

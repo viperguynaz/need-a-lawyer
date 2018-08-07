@@ -1,5 +1,5 @@
-import {ObjectUtils} from './object-utils';
-import {ArrayUtils} from './array-utils';
+//import {ObjectUtils} from './object-utils';
+//import {ArrayUtils} from './array-utils';
 
 export class CommonExpressions {
   public static isDefinedAndNotNull(value: any) {
@@ -38,12 +38,12 @@ export class CommonExpressions {
       return value1 === value2;
     }
 
-    if (Array.isArray(value1)) {
-      return ArrayUtils.areEqual(value1, value2);
-    }
+    // if (Array.isArray(value1)) {
+    //   return ArrayUtils.areEqual(value1, value2);
+    // }
 
-    if (typeof value1 === 'object') {
-      return ObjectUtils.deepCompare(value1, value2);
-    }
+    // if (typeof value1 === 'object') {
+    //   return ObjectUtils.deepCompare(value1, value2);
+    // }
   }
 }
