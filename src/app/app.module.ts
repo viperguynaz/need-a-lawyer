@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, PLATFORM_ID, APP_ID, Inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './modules/app-routing/app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './containers/home/home.component';
@@ -16,7 +15,7 @@ import { GooglePlacesDirective } from './directives/google-places.directive';
 import { SpecialtySelectComponent } from './components/specialty-select/specialty-select.component';
 import { ToSlugPipe } from './pipes/to-slug.pipe';
 import { FromSlugPipe } from './pipes/from-slug.pipe';
-import { HeaderComponent } from './components/header/header.component';
+import { HeaderComponent } from './components/header/header';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { SpecialtiesComponent } from './components/specialties/specialties.component';
