@@ -12,6 +12,9 @@ import { StringHelpers as stringHelper }  from '../../utils/string-helpers';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  public buttonText = 'Find A Lawyer';
+  public buttonLink = '/resutls'; // TODO: link helper;
+
 
   city: string;
   state: string;

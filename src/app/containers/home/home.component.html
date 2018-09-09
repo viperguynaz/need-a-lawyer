@@ -1,12 +1,25 @@
-<div style="text-align: center;">
-  <h1>Need to find a lawyer?</h1>
-  <h2>We can help you find a local lawyer.</h2>
-  <p>Searching for the best legal help in your area? The get started by telling us:</p>
-  <p>Where are you looking?</p>
-  <p>What type of leagl help do you need?</p>
-  <img src="https://regmedia.co.uk/2016/06/02/lawyer_up.jpg?x=1200&y=794" width="80%" alt="find a lawyer" class="homeimg" />
-  <p>Coming soon!</p>
-  <input appGooglePlaces [options]='placesRef.options' #placesRef (onAddressChange)="handleAddressChange($event)"/><br/><br/>
-  <app-specialty-select (onSpecialtyChange)="handleSpecialtyChange($event)"></app-specialty-select>
-  <app-specialties></app-specialties>
-</div>
+<rc-hero>
+  <div class="home-heading">
+    <h1>Need to find a lawyer?</h1>
+    <h2>We can help you find a local lawyer!</h2>
+  </div>
+  
+  <div class="home-inputs">
+    <input class="home-input"
+      appGooglePlaces
+      [options]='placesRef.options'
+      placeholder="I need a lawyer in"
+      #placesRef
+      (onAddressChange)="handleAddressChange($event)"/>
+    <app-specialty-select
+      (onSpecialtyChange)="handleSpecialtyChange($event)">
+    </app-specialty-select>
+    <app-specialties></app-specialties>
+    <rc-button
+      [buttonText]="'Find My Lawyer'"
+      [buttonLink]="ctaButtonLink">
+    </rc-button>
+  </div>
+  
+
+</rc-hero>

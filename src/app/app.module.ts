@@ -23,6 +23,8 @@ import { RCNavSwitch } from './components/nav-switch/nav-switch';
 import { SpecialtiesComponent } from './components/specialties/specialties.component';
 import { ErrorComponent } from './containers/error/error.component';
 import { SpecialtyComponent } from './containers/specialty/specialty.component';
+import { rcHero } from './components/rc-hero/hero';
+import { rcButton } from './components/rc-button/button';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { SpecialtyComponent } from './containers/specialty/specialty.component';
     RCNavSwitch,
     SpecialtiesComponent,
     ErrorComponent,
-    SpecialtyComponent
+    SpecialtyComponent,
+    rcHero,
+    rcButton
   ],
   imports: [
     AppRoutingModule,
