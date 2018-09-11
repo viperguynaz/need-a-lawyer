@@ -3,21 +3,15 @@
 
 .overlay {
   position: fixed;
-  opacity: 0;
+  display: none;
   top: 0;
   background-color: gray;
   height: 100%;
   width: 100%;
-  z-index: 0; //[TODO: make z-index variables]
-  transition: all .3s ease-in-out;
 }
 
 .overlay-opened {
   opacity: 0.8;
   z-index: 3;
-}
-
-.main-layer {
-  position: relative;
-  z-index: 1; //[TODO: make z-index variables]
+  display: block;
 }
