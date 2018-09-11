@@ -1,10 +1,8 @@
 <select name="specialty"
   class="specialty-input"
   (change)="specialtyChangeEvent($event)">
-  <option value="" selected>Who specializes in</option>
   <option *ngFor="let item of options"
   [value]="item | lowercase | toSlug">
-    Who specializes in 
-    <span class="input-value">{{item}}</span>
+    {{item}}
   </option>
 </select>

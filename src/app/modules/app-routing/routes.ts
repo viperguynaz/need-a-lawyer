@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-import { HomeComponent } from '../../containers/home/home.component';
+import { HomeComponent } from '../../containers/home/home';
 import { ResultsComponent } from '../../containers/results/results.component';
 import { DetailComponent } from '../../containers/detail/detail.component';
 import { PrivacyComponent } from '../../containers/privacy/privacy.component';

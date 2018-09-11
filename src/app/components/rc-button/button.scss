@@ -1,12 +1,14 @@
+@import '../../../sass/variables.scss';
+
 .rc-button {
   display: block;
   margin: 0 auto;
   width: 100%;
   padding: 0.5rem 0;
-  background-color: #4A90E2; //TODO: make variable;
-  border-radius: 0.3rem; //TODO: make variable;
+  background-color: $primaryColor;
+  border-radius: $buttonBorderRadius;
   text-decoration: none;
   text-align: center;
   font-size: 1.5rem;
-  color: #FFFFFF; //TODO: make variable;
+  color: $white;
 }

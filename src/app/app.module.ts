@@ -4,7 +4,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './modules/app-routing/app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './containers/home/home.component';
+import { HomeComponent } from './containers/home/home';
 import { ResultsComponent } from './containers/results/results.component';
 import { DetailComponent } from './containers/detail/detail.component';
 import { PrivacyComponent } from './containers/privacy/privacy.component';

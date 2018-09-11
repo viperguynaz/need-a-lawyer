@@ -8,8 +8,8 @@ import { StringHelpers as stringHelper }  from '../../utils/string-helpers';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  templateUrl: './home.html',
+  styleUrls: ['./home.scss']
 })
 export class HomeComponent implements OnInit {
   public buttonText = 'Find A Lawyer';

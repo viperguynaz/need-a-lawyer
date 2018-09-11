@@ -1,0 +1,39 @@
+@import '../../../sass/variables.scss';
+
+:host {
+  .home-heading {
+    color: $secondaryColor;
+    text-shadow: rgba($white, 0.2) 1px 1px 1px;
+    width: 75%;
+
+    .cta-one {
+      font-size: 2.5em;
+    }
+
+    .cta-two {
+      font-size: 1.7rem;
+    }
+  }
+  .home-inputs {
+    margin: 4rem 0;
+
+    .input-label {
+      line-height: 2.3rem;
+      font-weight: bold;
+      color: $secondaryColor;
+      font-size: 1.3rem;
+      
+      .home-input {
+        width: 96%;
+        margin: 0 auto 1rem auto;
+        display: block;
+        padding: 0.5rem 2%;
+        border-radius: $buttonBorderRadius;
+        border: 0;
+        font-size: 1.3rem;
+        background: $white;
+      }
+    }
+  }
+}
+
