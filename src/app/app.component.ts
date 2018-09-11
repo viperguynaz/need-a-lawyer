@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  public navOpen: boolean;
+  @Output() close = new EventEmitter<void>();
+
+
+  public toggleNav() {
+    console.log("this is firing");
+    this.navOpen = !this.navOpen;
+  }
 }
+
