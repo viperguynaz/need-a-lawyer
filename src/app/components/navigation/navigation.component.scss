@@ -1,0 +1,68 @@
+.nav-outer-container {
+  background-color: #36648B;
+  bottom: 0;
+  height: 100%;
+  right: -80%;
+  max-width: 300px;
+  min-height: 90vh;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  width: 80%;
+  z-index: 4;
+  text-align: center;
+  color: #fff
+}
+
+.open-nav {
+  right:0;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 1rem 0;
+  border-top: 1px solid white;
+  padding: 1rem 0 1rem 1rem;
+
+  &:last-child {
+    border-bottom: 1px solid white;
+  }
+}
+
+.close-button {
+  position: absolute;
+  -webkit-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  z-index: 100;
+  height: 5vw;
+  width: 5vw;
+  right: 5vw;
+  top: 5.5vw;
+}
+
+.nav-header-icon {
+  margin: 0.5rem 0;
+}
+
+.scale-icon {
+  fill:#fff;
+  display: inline-block;
+  width: 12%;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+.scale-text {
+  display: inline-block;
+  color: #fff;
+  vertical-align: middle;
+}
+
+.svg-x {
+  fill: #fff;
+}

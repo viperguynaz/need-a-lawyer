@@ -18,6 +18,8 @@ import { FromSlugPipe } from './pipes/from-slug.pipe';
 import { HeaderComponent } from './components/header/header';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { RCNavSwitch } from './components/nav-switch/nav-switch';
+
 import { SpecialtiesComponent } from './components/specialties/specialties.component';
 import { ErrorComponent } from './containers/error/error.component';
 import { SpecialtyComponent } from './containers/specialty/specialty.component';
@@ -39,6 +41,7 @@ import { SpecialtyComponent } from './containers/specialty/specialty.component';
     HeaderComponent,
     FooterComponent,
     NavigationComponent,
+    RCNavSwitch,
     SpecialtiesComponent,
     ErrorComponent,
     SpecialtyComponent

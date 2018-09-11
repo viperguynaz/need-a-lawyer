@@ -4,6 +4,9 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HeaderComponent } from './components/header/header';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { RCNavSwitch } from './components/nav-switch/nav-switch';
+
+
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -12,7 +15,8 @@ describe('AppComponent', () => {
         AppComponent,
         HeaderComponent,
         FooterComponent,
-        NavigationComponent
+        NavigationComponent,
+        RCNavSwitch
        ],
       imports: [ RouterTestingModule ]
     }).compileComponents();

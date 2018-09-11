@@ -1,5 +1,17 @@
 @import '../sass/variables';
 
-body {
-  font-family: 'Muli', sans-serif;
+
+.overlay {
+  position: fixed;
+  display: none;
+  top: 0;
+  background-color: gray;
+  height: 100%;
+  width: 100%;
+}
+
+.overlay-opened {
+  opacity: 0.8;
+  z-index: 3;
+  display: block;
 }

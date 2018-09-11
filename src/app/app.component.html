@@ -1,5 +1,10 @@
-<rc-header></rc-header>
-<app-navigation></app-navigation>
+<rc-header (toggleNav)="toggleNav()"></rc-header>
+<app-navigation [opened]="navOpen" (closeNav)="toggleNav()">
+  </app-navigation>
+  <!--
+    [TODO: make an overlay component]
+  -->
+<div (click)="toggleNav()" class="overlay" [ngClass]="{'overlay-opened': navOpen}"></div>  
 <router-outlet></router-outlet>
 <app-footer></app-footer>
 

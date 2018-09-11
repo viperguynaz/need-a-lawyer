@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'rc-header',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.scss']
 })
 export class HeaderComponent implements OnInit {
+  @Output() toggleNav = new EventEmitter<void>();
 
   constructor() { }
 
