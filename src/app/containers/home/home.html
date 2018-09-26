@@ -1,0 +1,34 @@
+<rc-hero>
+  <div class="home-heading">
+    <h1 class="cta-one">Need to find a lawyer?</h1>
+    <h2 class="cta-two">We can help you find a local lawyer!</h2>
+  </div>
+  
+  <div class="home-inputs">
+    <label class="input-label">
+      I need a lawyer in
+      <input class="home-input"
+        appGooglePlaces
+        [options]='placesRef.options'
+        placeholder=""
+        #placesRef
+        (onAddressChange)="handleAddressChange($event)"/>
+    </label>
+
+    <label class="input-label">
+      Who specializes in
+      <app-specialty-select
+        (onSpecialtyChange)="handleSpecialtyChange($event)">
+      </app-specialty-select>
+    </label>
+
+    <app-specialties></app-specialties>
+    <rc-button
+      class="home-button"
+      [buttonText]="'Find My Lawyer'"
+      [buttonLink]="ctaButtonLink">
+    </rc-button>
+  </div>
+  
+
+</rc-hero>

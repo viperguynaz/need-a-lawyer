@@ -1,0 +1,11 @@
+@import '../../../sass/variables.scss';
+
+:host {
+  .hero-container {
+    height: calc(100vh - 3.2rem);
+    padding: 1rem 5vw;
+    background-image: url('../../../assets/img/hero-bkg.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+}

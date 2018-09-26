@@ -1,7 +1,7 @@
 ///<reference path="../../../../node_modules/@types/googlemaps/index.d.ts" />
 
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HomeComponent } from './home.component';
+import { HomeComponent } from './home';
 import { GooglePlacesDirective } from '../../directives/google-places.directive';
 import { SpecialtySelectComponent } from '../../components/specialty-select/specialty-select.component';
 

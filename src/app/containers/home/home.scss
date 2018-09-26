@@ -1,0 +1,71 @@
+@import '../../../sass/variables.scss';
+
+:host {
+  .home-heading {
+    color: $secondaryColor;
+    text-shadow: rgba($white, 0.2) 1px 1px 1px;
+    width: 75%;
+
+    .cta-one {
+      font-size: 11vw;
+    }
+
+    .cta-two {
+      font-size: 7vw;
+    }
+  }
+  .home-inputs {
+    margin: 3rem 0;
+
+    .input-label {
+      color: $secondaryColor;
+      line-height: 12vw;
+      font-size: 7vw;
+      
+      .home-input {
+        width: 96%;
+        margin: 0 auto 0.5rem auto;
+        display: block;
+        padding: 0.5rem 2%;
+        border-radius: $buttonBorderRadius;
+        border: 0;
+        font-size: 5vw;
+        line-height: 1.2rem;
+        background: $white;
+        outline: none;
+      }
+    }
+    .home-button {
+      display: block;
+      margin-top: 1rem;
+    }
+  }
+
+  @media screen and (min-width: $minWidth) {
+    .home-heading {
+      max-width: 45%;
+
+      .cta-one {
+        font-size: 3rem;
+        padding-top: 3rem;
+      }
+  
+      .cta-two {
+        font-size: 1.8rem;
+      }
+    }
+    .home-inputs {
+      max-width: 45%;
+      
+      .input-label {
+        font-size: 1.3rem;
+        line-height: 2rem;
+
+        .home-input {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
