@@ -1,4 +1,4 @@
-<div class="header-outer">
+<div class="header-outer" [ngClass]="{'nav-header': navOpen}">
   <a routerLink="/" class="logo-link">
       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          width="100%" height="39.6px" viewBox="0 0 175.8 39.6" xml:space="preserve">
@@ -73,7 +73,12 @@
     <a routerLink="/phoenix/arizona/bankruptcy/attorney/abc">Detail</a>  
   </div>
   <rc-nav-switch
-    (handleNavSwitchClick)="toggleNav.emit()"
+    (handleNavSwitchClick)="toggleNav()"
   ></rc-nav-switch>
+
+
+
 </div>
 
+<app-navigation [opened]="navOpen" (closeNav)="toggleNav()">
+</app-navigation>

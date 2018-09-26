@@ -1,17 +1,9 @@
 @import '../sass/variables';
 
 
-.overlay {
-  position: fixed;
-  display: none;
-  top: 0;
-  background-color: gray;
-  height: 100%;
-  width: 100%;
-}
 
-.overlay-opened {
-  opacity: 0.8;
-  z-index: 3;
-  display: block;
+.page-body {
+  z-index: 1;
+  position: relative;
+  background: white;
 }
