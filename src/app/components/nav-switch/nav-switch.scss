@@ -1,11 +1,9 @@
 .nav-switch {
-  display: inline-block;
-  //[TODO: make a mixin for this] 
   position: absolute;
+  right: 0;
+  width: 2rem;
   top: 50%;
-  right: 1vw;
-  width: 3rem;
-  transform: translate(0, -50%);
+
   .dot {
     width: 0.5rem;
     height: 0.5rem;
@@ -17,4 +15,54 @@
   .dot:last-child {
     margin-right: 0;
   }
+
+
+
+	
+}
+
+// variables
+$dot-size: 5px;
+$dot-border-radius: $dot-size / 2;
+$dot-color: #4682B4;
+
+* {
+  -webkit-backface-visibility: hidden;
+}
+
+div {
+   transform: translate3d(0px, 0px, 0px);
+}
+
+.nav-dots {
+  position: absolute;
+
+  display: block;
+  width: $dot-size;
+  height: $dot-size;
+  border-radius: $dot-border-radius;
+  background-color: $dot-color;
+  transition: all .2s ease-in-out 0.2s;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content:"";
+    width: $dot-size;
+    height: $dot-size;
+    border-radius: $dot-border-radius;
+    background-color: $dot-color;
+    transition: all .2s ease-in-out 0.2s;
+  }
+  
+  &::before {
+    transform:translateX(-8px);
+  }
+  
+  &::after {
+    transform:translateX(8px);
+  }
+  
 }
