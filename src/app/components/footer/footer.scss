@@ -1,0 +1,36 @@
+@import '../../../sass/variables.scss';
+
+:host {
+  .footer-container {
+    width: 100%;
+    padding: 1rem 0;
+    color: $white;
+    text-align: center;
+    background-color: $lightGray;
+    font-size: 4vw;
+
+    .footer-link {
+      color: $white;
+      text-decoration: none;
+      border-left: $borderThin solid $white;
+      padding: 0 5vw;
+    }
+    
+    .footer-link:first-child {
+      border-left: 0px solid $white;
+    }
+
+    .rc-logo {
+      display: inline-block;
+      fill: $white;
+      height: 2rem;
+      padding-top: 1rem;
+    }
+  }
+
+  @media screen and (min-width: $minWidth) {
+    .footer-container {
+      font-size: 1rem;
+    }
+  }
+}

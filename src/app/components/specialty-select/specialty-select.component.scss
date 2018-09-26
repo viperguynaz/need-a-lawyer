@@ -1,12 +1,22 @@
+@import '../../../sass/variables.scss';
+
 :host {
   .specialty-input {
     width: 100%;
-    margin: 0 auto 1rem auto;
+    margin: 0 auto 0.5rem auto;
     display: block;
     padding: 0.5rem 0;
-    border-radius: 0.3rem; // TODO: make variable.
+    border-radius: $buttonBorderRadius;
     border: 0;
-    font-size: 1.3rem;
-    background: #FFFFFF; // TODO: make variable.
+    font-size: 5vw;
+    background: $white;
+    outline: none;
+  }
+
+  @media screen and (min-width: $minWidth) {
+    .specialty-input {
+      font-size: 1rem;
+      height: 2.2rem;
+    }
   }
 }

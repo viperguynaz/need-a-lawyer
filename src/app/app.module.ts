@@ -16,7 +16,7 @@ import { SpecialtySelectComponent } from './components/specialty-select/specialt
 import { ToSlugPipe } from './pipes/to-slug.pipe';
 import { FromSlugPipe } from './pipes/from-slug.pipe';
 import { HeaderComponent } from './components/header/header';
-import { FooterComponent } from './components/footer/footer.component';
+import { FooterComponent } from './components/footer/footer';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { RCNavSwitch } from './components/nav-switch/nav-switch';
 

@@ -15,7 +15,7 @@
         (onAddressChange)="handleAddressChange($event)"/>
     </label>
 
-    <label>
+    <label class="input-label">
       Who specializes in
       <app-specialty-select
         (onSpecialtyChange)="handleSpecialtyChange($event)">
@@ -24,6 +24,7 @@
 
     <app-specialties></app-specialties>
     <rc-button
+      class="home-button"
       [buttonText]="'Find My Lawyer'"
       [buttonLink]="ctaButtonLink">
     </rc-button>

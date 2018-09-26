@@ -7,31 +7,63 @@
     width: 75%;
 
     .cta-one {
-      font-size: 2.5em;
+      font-size: 11vw;
     }
 
     .cta-two {
-      font-size: 1.7rem;
+      font-size: 7vw;
     }
   }
   .home-inputs {
-    margin: 4rem 0;
+    margin: 3rem 0;
 
     .input-label {
-      line-height: 2.3rem;
-      font-weight: bold;
       color: $secondaryColor;
-      font-size: 1.3rem;
+      line-height: 12vw;
+      font-size: 7vw;
       
       .home-input {
         width: 96%;
-        margin: 0 auto 1rem auto;
+        margin: 0 auto 0.5rem auto;
         display: block;
         padding: 0.5rem 2%;
         border-radius: $buttonBorderRadius;
         border: 0;
-        font-size: 1.3rem;
+        font-size: 5vw;
+        line-height: 1.2rem;
         background: $white;
+        outline: none;
+      }
+    }
+    .home-button {
+      display: block;
+      margin-top: 1rem;
+    }
+  }
+
+  @media screen and (min-width: $minWidth) {
+    .home-heading {
+      max-width: 45%;
+
+      .cta-one {
+        font-size: 3rem;
+        padding-top: 3rem;
+      }
+  
+      .cta-two {
+        font-size: 1.8rem;
+      }
+    }
+    .home-inputs {
+      max-width: 45%;
+      
+      .input-label {
+        font-size: 1.3rem;
+        line-height: 2rem;
+
+        .home-input {
+          font-size: 1rem;
+        }
       }
     }
   }
