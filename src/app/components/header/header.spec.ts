@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RCNavSwitch } from '../nav-switch/nav-switch'
 import { HeaderComponent } from './header';
+import { NavigationComponent } from '../navigation/navigation.component';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -8,7 +9,7 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
+      declarations: [ HeaderComponent, RCNavSwitch, NavigationComponent ]
     })
     .compileComponents();
   }));

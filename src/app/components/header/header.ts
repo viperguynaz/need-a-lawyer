@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { RCNavSwitch } from '../nav-switch/nav-switch';
 
 @Component({
   selector: 'rc-header',
