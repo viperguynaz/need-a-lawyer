@@ -13,7 +13,7 @@ import { StringHelpers as stringHelper }  from '../../utils/string-helpers';
 })
 export class HomeComponent implements OnInit {
   public buttonText = 'Find A Lawyer';
-  public buttonLink = '/resutls'; // TODO: link helper;
+  public buttonLink = ''; // TODO: link helper;
 
 
   city: string;
@@ -25,6 +25,11 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+    this.resultsLink();
+  }
+
+  public resultsLink() {
+    this.buttonLink = `${this.state}/${this.city}/${this.speciality}/lawyers`;
   }
 
   public handleAddressChange(place: google.maps.places.PlaceResult) {
@@ -34,6 +39,7 @@ export class HomeComponent implements OnInit {
       const citySlug = stringHelper.slug(this.city.toLowerCase());
       const stateSlug = stringHelper.slug(this.state.toLowerCase());
       this.router.navigateByUrl(`/${citySlug}/${stateSlug}/${this.speciality}/lawyers`);
+      this.resultsLink();
     }
   }
 
@@ -43,6 +49,7 @@ export class HomeComponent implements OnInit {
       const citySlug = stringHelper.slug(this.city.toLowerCase());
       const stateSlug = stringHelper.slug(this.state.toLowerCase());
       this.router.navigateByUrl(`/${citySlug}/${stateSlug}/${this.speciality}/lawyers`);
+      this.resultsLink();
     }
   }
 
