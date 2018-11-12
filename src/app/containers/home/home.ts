@@ -39,6 +39,7 @@ export class HomeComponent implements OnInit {
       const citySlug = stringHelper.slug(this.city.toLowerCase());
       const stateSlug = stringHelper.slug(this.state.toLowerCase());
       this.router.navigateByUrl(`/${citySlug}/${stateSlug}/${this.speciality}/lawyers`);
+      this.resultsLink();
     }
   }
 
@@ -48,6 +49,7 @@ export class HomeComponent implements OnInit {
       const citySlug = stringHelper.slug(this.city.toLowerCase());
       const stateSlug = stringHelper.slug(this.state.toLowerCase());
       this.router.navigateByUrl(`/${citySlug}/${stateSlug}/${this.speciality}/lawyers`);
+      this.resultsLink();
     }
   }
 
